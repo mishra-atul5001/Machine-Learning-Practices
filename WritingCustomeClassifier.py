@@ -3,7 +3,6 @@
 from scipy.spatial import distance
 def euc(a,b):
 	return distance.euclidean(a,b)
-
 # Create Class ScrapKNN() with fn's : fit,predict and closest
 class ScrapKNN():
 	def fit(self,X_train,y_train):
@@ -27,7 +26,6 @@ class ScrapKNN():
 				best_index=i
 		return self.y_train[best_index]
 
-
 from sklearn import datasets
 iris = datasets.load_iris()
 X= iris.data
@@ -39,9 +37,8 @@ my_classifier_KNeighbor = ScrapKNN()
 my_classifier_KNeighbor.fit(X_train,y_train)
 predictions_Kneighbor = my_classifier_KNeighbor.predict(X_test)
 from sklearn.metrics import accuracy_score
-print("Accuracy using KNeighbourClassifier : ")
+print("Accuracy using KNeighbour Custom Classifier : ")
 print(accuracy_score(y_test,predictions_Kneighbor))
-
-# # Output:
+# Output:
 # Accuracy using KNeighbourClassifier : 
 # 0.9733333333333334
